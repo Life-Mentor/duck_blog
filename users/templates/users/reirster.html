@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<title> reirster </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'users/login.css' %}">
+	</head>
+	<body>
+		<h1 align="center"> Reirster </h1>
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button>提交</button>
+			<p>{{ code }}</p>
+		</form>
+	</body>
+</html>

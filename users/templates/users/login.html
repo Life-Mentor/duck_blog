@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Login </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'users/login.css' %}">
+	</head>
+	<body>
+		<h1 align="center"> Login </h1>
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<a href='{%url 'users:forget' %}'> 忘记密码 </a>
+			<button>提交</button>
+		</form>
+	</body>
+</html>
