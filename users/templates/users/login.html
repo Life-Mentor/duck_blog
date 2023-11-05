@@ -3,6 +3,7 @@
 	<head>
 		<title> Login </title>
 		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
 		<link rel="stylesheet" href="{% static 'users/login.css' %}">
 	</head>
 	<body>
@@ -10,8 +11,10 @@
 		<form method="post">
 			{% csrf_token %}
 			{{ form.as_p }}
-			<a href='{%url 'users:forget' %}'> 忘记密码 </a>
-			<button>提交</button>
+			<button class="button is-warning">提交</button>
+			<div class='column is-one-fifth'>
+				<a class='button is-primary is-large'href='{%url 'users:forget' %}' width=25> 忘记密码 </a>
+			</div>
 		</form>
 	</body>
 </html>
