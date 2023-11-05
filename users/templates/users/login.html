@@ -4,14 +4,42 @@
 		<title> Login </title>
 		{% load static %}
 		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
-		<link rel="stylesheet" href="{% static 'users/login.css' %}">
+		<link rel="stylesheet" href="{% static 'imgs/img/css/all.css' %}">
+		<!-- <link rel="stylesheet" href="{% static 'users/login.css' %}"> -->
 	</head>
 	<body>
+		<nav class="breadcrumb" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="#">Bulma</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Components</a></li>
+				<li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+			</ul>
+		</nav>
 		<h1 align="center"> Login </h1>
 		<form method="post">
 			{% csrf_token %}
-			{{ form.as_p }}
-			<button class="button is-warning">提交</button>
+			<div class="field">
+				<label class="label">Username</label>
+				<div class="control has-icons-left has-icons-right"style="text-align:center;vertical-align:middle;">
+					{{ form.username }}
+					<span class="icon is-small is-left">
+						<i class="fas fa-user"></i>
+					</span>
+					<span class="icon is-small is-right">
+						<i class="fas fa-check"></i>
+					</span>
+				</div>
+			</div>
+			<div class="field">
+				<p class="control has-icons-left">
+				{{ form.password}}
+				<span class="icon is-small is-left">
+					<i class="fas fa-check"></i>
+				</span>
+				</p>
+			</div>
+			<button class="button is-danger is-outlined is-rounded">提交</button>
 			<div class='column is-one-fifth'>
 				<a class='button is-primary is-large'href='{%url 'users:forget' %}' width=25> 忘记密码 </a>
 			</div>
