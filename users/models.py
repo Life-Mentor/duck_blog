@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
+
 
 class UserProfile(models.Model):
 
@@ -10,7 +12,8 @@ class UserProfile(models.Model):
 
     owner = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="用户")
     nike_name = models.CharField('昵称', max_length=23, blank=True, default='')
-    user_info = models.CharField('个性签名', max_length=100, blank=True, default='')
+    user_info = models.CharField('个人简介', max_length=100, blank=True, default='')
+    gexing = models.CharField('个性签名', max_length=100, blank=True, default='')
     birthday = models.DateField('生日', null=True, blank=True)
     gender = models.CharField('性别', max_length=6, choices=USER_GENDER_TYPE, default='male')
     address = models.CharField('地址', max_length=100, blank=True, default='')

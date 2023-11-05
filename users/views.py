@@ -5,9 +5,11 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import make_password
 from django.db.models import Q
+from django.urls import reverse
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, Reirster, ForgetPwdForm, ModifyPwdForm, forms 
-from .models import EmailVerifyRecord
+from .models import EmailVerifyRecord, UserProfile
 from utils.email_send import send_register_email
 
 def active_user(request,active_code):
@@ -47,7 +49,9 @@ class login_view(View):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponse("登录成功")
+                responses = redirect(reverse('users:home'))
+                responses.set_cookie("userid",user.id)
+                return responses
             else:
                 return HttpResponse("登录失败")
         return render(request,"users/login.html",{'form':form})
@@ -104,7 +108,10 @@ class reset_pwd(View):
             code = '修改失败'
             return render(request,'users/reset_pwd.html',{'form':form,'code':code})
 
-
+class user_home(View):
+    def get(self,request):
+        user = User.objects.get(username=request.user)
+        return render(request,'users/home.html',{'user':user})
 
 
 
