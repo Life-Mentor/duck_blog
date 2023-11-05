@@ -86,20 +86,20 @@ class forget_pwd(View):
         return render(request,'users/forget_pwd.html',{'form':form})
 
 class reset_pwd(View):
-    def get(self,request):
+    def get(self,request,active_code):
         form = ModifyPwdForm()
-        return render(request,'users/forget_pwd_pwd.html')
-    def post(self,request):
+        return render(request,'users/forget_pwd.html',{'form':form})
+    def post(self,request,active_code):
         form = ModifyPwdForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             record = EmailVerifyRecord.objects.get(code=active_code)
             email = record.email
             user = User.objects.get(email=email)
-            user.username = email
-            user.password = make_password(form.cleaned_data.get('password'))
+            user.email = email
+            user.password = make_password(form.cleaned_data['password'])
             user.save()
             code = '修改成功'
-            return render(request,'users/forget_pwd_pwd.html',{'code':code})
+            return render(request,'users/reset_pwd.html',{'form':form,'code':code})
         else:
             code = '修改失败'
             return render(request,'users/reset_pwd.html',{'form':form,'code':code})

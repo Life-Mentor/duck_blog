@@ -7,5 +7,5 @@ urlpatterns = [
     path("reirster/",reirster.as_view(),name="reirster"),
     path('active/<active_code>',active_user,name='active'),
     path('forget/',forget_pwd.as_view(),name='forget'),
-    path('reset_pwd/',reset_pwd.as_view(),name='reset')
+    path('reset/<active_code>',reset_pwd.as_view(),name='reset')
 ]

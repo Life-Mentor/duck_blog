@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class LoginForm(forms.Form):
     username = forms.CharField(label='用户名', max_length=32)
-    password = forms.CharField(label='密码',max_length=6,widget=forms.PasswordInput())
+    password = forms.CharField(label='密码',max_length=32,widget=forms.PasswordInput())
 
     def clean_password(self):
         username = self.cleaned_data.get('username')
@@ -45,8 +45,7 @@ class ForgetPwdForm(forms.Form):
 
 class ModifyPwdForm(forms.Form):
     """修改密码表单"""
-    password = forms.CharField(label="输入新密码", min_length=6,
-        widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': '输入密码'}))
+    password = forms.CharField(label="输入新密码", min_length=6, widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': '输入密码'}))
 
 
 
