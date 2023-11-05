@@ -1,0 +1,264 @@
+.
+├── blog 博客APP
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── models.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   └── views.cpython-311.pyc
+│   ├── templates
+│   │   └── index.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── duck_blog 配置文件总项目
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── settings.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   └── wsgi.cpython-311.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── media 				上传文件夹
+├── README.md
+├── static 				静态文件夹
+│   └── bulma
+│       ├── bulma.sass
+│       ├── css
+│       │   ├── bulma.css
+│       │   ├── bulma.css.map
+│       │   ├── bulma.min.css
+│       │   ├── bulma-rtl.css
+│       │   ├── bulma-rtl.css.map
+│       │   └── bulma-rtl.min.css
+│       ├── LICENSE
+│       ├── package.json
+│       ├── README.md
+│       └── sass
+│           ├── base
+│           │   ├── _all.sass
+│           │   ├── animations.sass
+│           │   ├── generic.sass
+│           │   ├── helpers.sass
+│           │   └── minireset.sass
+│           ├── components
+│           │   ├── _all.sass
+│           │   ├── breadcrumb.sass
+│           │   ├── card.sass
+│           │   ├── dropdown.sass
+│           │   ├── level.sass
+│           │   ├── media.sass
+│           │   ├── menu.sass
+│           │   ├── message.sass
+│           │   ├── modal.sass
+│           │   ├── navbar.sass
+│           │   ├── pagination.sass
+│           │   ├── panel.sass
+│           │   └── tabs.sass
+│           ├── elements
+│           │   ├── _all.sass
+│           │   ├── box.sass
+│           │   ├── button.sass
+│           │   ├── container.sass
+│           │   ├── content.sass
+│           │   ├── form.sass
+│           │   ├── icon.sass
+│           │   ├── image.sass
+│           │   ├── notification.sass
+│           │   ├── other.sass
+│           │   ├── progress.sass
+│           │   ├── table.sass
+│           │   ├── tag.sass
+│           │   └── title.sass
+│           ├── form
+│           │   ├── _all.sass
+│           │   ├── checkbox-radio.sass
+│           │   ├── file.sass
+│           │   ├── input-textarea.sass
+│           │   ├── select.sass
+│           │   ├── shared.sass
+│           │   └── tools.sass
+│           ├── grid
+│           │   ├── _all.sass
+│           │   ├── columns.sass
+│           │   └── tiles.sass
+│           ├── helpers
+│           │   ├── _all.sass
+│           │   ├── color.sass
+│           │   ├── flexbox.sass
+│           │   ├── float.sass
+│           │   ├── other.sass
+│           │   ├── overflow.sass
+│           │   ├── position.sass
+│           │   ├── spacing.sass
+│           │   ├── typography.sass
+│           │   └── visibility.sass
+│           ├── layout
+│           │   ├── _all.sass
+│           │   ├── footer.sass
+│           │   ├── hero.sass
+│           │   └── section.sass
+│           └── utilities
+│               ├── _all.sass
+│               ├── animations.sass
+│               ├── controls.sass
+│               ├── derived-variables.sass
+│               ├── extends.sass
+│               ├── functions.sass
+│               ├── initial-variables.sass
+│               └── mixins.sass
+├── tree.txt
+├── users 				users文件夹APP
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_alter_userprofile_options.py
+│   │   ├── 0003_emailverifyrecord.py
+│   │   ├── 0004_userprofile_user_info.py
+│   │   ├── 0005_userprofile_gexing_alter_userprofile_user_info.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       ├── 0002_alter_userprofile_options.cpython-311.pyc
+│   │       ├── 0003_emailverifyrecord.cpython-311.pyc
+│   │       ├── 0004_userprofile_user_info.cpython-311.pyc
+│   │       ├── 0005_userprofile_gexing_alter_userprofile_user_info.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   ├── forms.cpython-311.pyc
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── models.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   └── views.cpython-311.pyc
+│   ├── static							usersAPP专用静态文件
+│   │   ├── bulma
+│   │   │   ├── bulma.sass
+│   │   │   ├── css
+│   │   │   │   ├── bulma.css
+│   │   │   │   ├── bulma.css.map
+│   │   │   │   ├── bulma.min.css
+│   │   │   │   ├── bulma-rtl.css
+│   │   │   │   ├── bulma-rtl.css.map
+│   │   │   │   └── bulma-rtl.min.css
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   ├── README.md
+│   │   │   └── sass
+│   │   │       ├── base
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── animations.sass
+│   │   │       │   ├── generic.sass
+│   │   │       │   ├── helpers.sass
+│   │   │       │   └── minireset.sass
+│   │   │       ├── components
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── breadcrumb.sass
+│   │   │       │   ├── card.sass
+│   │   │       │   ├── dropdown.sass
+│   │   │       │   ├── level.sass
+│   │   │       │   ├── media.sass
+│   │   │       │   ├── menu.sass
+│   │   │       │   ├── message.sass
+│   │   │       │   ├── modal.sass
+│   │   │       │   ├── navbar.sass
+│   │   │       │   ├── pagination.sass
+│   │   │       │   ├── panel.sass
+│   │   │       │   └── tabs.sass
+│   │   │       ├── elements
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── box.sass
+│   │   │       │   ├── button.sass
+│   │   │       │   ├── container.sass
+│   │   │       │   ├── content.sass
+│   │   │       │   ├── form.sass
+│   │   │       │   ├── icon.sass
+│   │   │       │   ├── image.sass
+│   │   │       │   ├── notification.sass
+│   │   │       │   ├── other.sass
+│   │   │       │   ├── progress.sass
+│   │   │       │   ├── table.sass
+│   │   │       │   ├── tag.sass
+│   │   │       │   └── title.sass
+│   │   │       ├── form
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── checkbox-radio.sass
+│   │   │       │   ├── file.sass
+│   │   │       │   ├── input-textarea.sass
+│   │   │       │   ├── select.sass
+│   │   │       │   ├── shared.sass
+│   │   │       │   └── tools.sass
+│   │   │       ├── grid
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── columns.sass
+│   │   │       │   └── tiles.sass
+│   │   │       ├── helpers
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── color.sass
+│   │   │       │   ├── flexbox.sass
+│   │   │       │   ├── float.sass
+│   │   │       │   ├── other.sass
+│   │   │       │   ├── overflow.sass
+│   │   │       │   ├── position.sass
+│   │   │       │   ├── spacing.sass
+│   │   │       │   ├── typography.sass
+│   │   │       │   └── visibility.sass
+│   │   │       ├── layout
+│   │   │       │   ├── _all.sass
+│   │   │       │   ├── footer.sass
+│   │   │       │   ├── hero.sass
+│   │   │       │   └── section.sass
+│   │   │       └── utilities
+│   │   │           ├── _all.sass
+│   │   │           ├── animations.sass
+│   │   │           ├── controls.sass
+│   │   │           ├── derived-variables.sass
+│   │   │           ├── extends.sass
+│   │   │           ├── functions.sass
+│   │   │           ├── initial-variables.sass
+│   │   │           └── mixins.sass
+│   │   ├── imgs
+│   │   │   ├── index.jpg
+│   │   │   └── index.png
+│   │   ├── js
+│   │   └── users
+│   │       ├── home.css
+│   │       └── login.css
+│   ├── templates 						users所有的HTML
+│   │   ├── index.html
+│   │   └── users
+│   │       ├── base.html
+│   │       ├── forget_pwd.html
+│   │       ├── home.html
+│   │       ├── login.html
+│   │       ├── reirster.html
+│   │       └── reset_pwd.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+└── utils							需要的工具，发邮件什么的
+    ├── email_send.py
+    ├── __init__.py
+    └── __pycache__
+        ├── email_send.cpython-311.pyc
+        └── __init__.cpython-311.pyc
+
+44 directories, 218 files
