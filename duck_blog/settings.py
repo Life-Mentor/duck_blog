@@ -69,8 +69,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"),]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media/uploads'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'   # 用于发送电子邮件的主机。

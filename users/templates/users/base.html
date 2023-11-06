@@ -1,14 +1,50 @@
 <!doctype html>
 <html>
 	<head>
-		{% load static %}
-		<link rel="stylesheet" href="{% static 'users/login.css' %}">
 		{% block head%}
-			<title> Login </title>
+			<title> userhome </title>
 		{% endblock head%}
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
+		<link rel="stylesheet" href="{% static 'imgs/img/css/all.css' %}">
+		<link rel="stylesheet" href="{% static 'users/home.css' %}">
+    		<script src=" {% static 'js/all.min.js' %}"></script>
 	</head>
 	<body>
-		{% block body %}
-		{% endblock body %}
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item">
+					{% if users.userprofile.image %}
+					<img src=' {% static 'imgs/head.jpg' %} {{ users.image }} '>
+					{% else %}
+						<img src='{% static 'imgs/head.jpg' %}' alt='ikun'>
+					{% endif %}
+				</a>
+			</div>
+			<div class='navbar-menu'>
+				<div class='navbar-start'>
+					<a href= '{% url 'users:index' %}' class="navbar-item"> 首页 </a>
+					<a href= '{% url 'users:home' %}' class="navbar-item"> 个人中心 </a>
+					<a href= '{% url 'users:login' %}' class="navbar-item"> 登录 </a>
+					<a href= '{% url 'users:reirster'%}' class="navbar-item"> 注册 </a>
+				</div>
+				<div class="navbar-end">
+					<div class="navbar-item">
+					</div>
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link"> 下拉菜单 </a>
+						<div class="navbar-dropdown">
+							<a class="navbar-item"> Overview </a>
+							<a class="navbar-item"> Elements </a>
+							<a class="navbar-item"> Components </a>
+							<hr class="navbar-divider">
+							<a href='{% url 'users:logout'%}' class="navbar-item"> 退出登录 </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		{% block content %}
+		{% endblock content %}
 	</body>
 </html>

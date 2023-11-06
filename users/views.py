@@ -1,7 +1,7 @@
 from django.http import HttpRequest
 from django.shortcuts import redirect, render, HttpResponse
 from django.views import View
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import make_password
 from django.db.models import Q
@@ -11,6 +11,10 @@ from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, Reirster, ForgetPwdForm, ModifyPwdForm, forms 
 from .models import EmailVerifyRecord, UserProfile
 from utils.email_send import send_register_email
+
+def logout_user(request):
+    logout(request)
+    return redirect(reverse('users:index'))
 
 def active_user(request,active_code):
     all_records = EmailVerifyRecord.objects.filter(code = active_code)
@@ -35,7 +39,7 @@ class MyBlack(ModelBackend):
 
 class index(View):
     def get(self,request):
-        return render(request,"index.html")
+        return render(request,"users/index.html")
 
 class login_view(View):
     def get(self,request):
@@ -108,29 +112,7 @@ class reset_pwd(View):
             code = '修改失败'
             return render(request,'users/reset_pwd.html',{'form':form,'code':code})
 
-class user_home(View):
-    def get(self,request):
-        user = User.objects.get(username=request.user)
-        return render(request,'users/home.html',{'user':user})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@login_required(login_url='users:login')
+def user_home(request):
+    user = User.objects.get(username=request.user)
+    return render(request,'users/home.html',{'users':user})

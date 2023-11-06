@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		{% block head%}
+			<title> userhome </title>
+		{% endblock head%}
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
+		<link rel="stylesheet" href="{% static 'imgs/img/css/all.css' %}">
+		<link rel="stylesheet" href="{% static 'users/home.css' %}">
+	</head>
+	<body>
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item">
+					{% if users.userprofile.image %}
+						<img src='{{MEDIA_URL}}{{ users.image }}'>
+					{% else %}
+						<img src='{% static 'imgs/head.jpg' %}' alt='ikun'>
+					{% endif %}
+				</a>
+			</div>
+			<div class='navbar-menu'>
+				<div class='navbar-start'>
+					<a href= '{% url 'users:index' %}' class="navbar-item"> 首页 </a>
+					<a href= '{% url 'users:home' %}' class="navbar-item"> 个人中心 </a>
+					<a href= '{% url 'users:login' %}' class="navbar-item"> 登录 </a>
+					<a href= '{% url 'users:reirster'%}' class="navbar-item"> 注册 </a>
+				</div>
+				<div class="navbar-end">
+					<div class="navbar-item">
+					</div>
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link"> 下拉菜单 </a>
+						<div class="navbar-dropdown">
+							<a class="navbar-item"> Overview </a>
+							<a class="navbar-item"> Elements </a>
+							<a class="navbar-item"> Components </a>
+							<hr class="navbar-divider">
+							<a href='{% url 'users:logout'%}' class="navbar-item"> 退出登录 </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="tabs is-centered">
+			<ul>
+				<li class="is-active">
+					<a> <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span> <span>Pictures</span> </a>
+				</li>
+				<li>
+					<a> <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span> <span>Music</span> </a>
+				</li>
+				<li>
+					<a> <span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span> <span>Videos</span> </a>
+				</li>
+				<li>
+					<a> <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span> <span>Documents</span> </a>
+				</li>
+			</ul>
+		</div>
+    		{% block content %}
+    		{% endblock content %}
+	</body>
+</html>

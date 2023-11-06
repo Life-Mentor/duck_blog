@@ -1,18 +1,17 @@
-<!doctype html>
-<html>
-	<head>
-		<title> userhome </title>
-		{% load static %}
-		<link rel="stylesheet" href="{% static 'users/login.css' %}">
-		<link rel="stylesheet" href="{% static 'users/home.css' %}">
-	</head>
-	<body>
-		<h1 align="center"> userhome </h1>
-		{{ user }}
-		<nav class="navbar has-shadow" role="navigation" aria-label="">
-			<div class="">
-			</div>
-		</nav>
-		</form>
-	</body>
-</html>
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+
+<figure class='image is-96x96'>
+{% if users.userprofile.image %}
+	<img src=' {% static 'imgs/head.jpg' %} {{ users.image }} '>
+{% else %}
+	<img src='{% static 'imgs/head.jpg' %}' alt='ikun'>
+{% endif %}
+</figure>
+	{% if users.profile.nike_name %}
+		<span> {{ users.profile.nike_name }} </span>
+	{% else %}
+		<span> {{ users.username }} </span>
+	{% endif %}
+{% endblock content %}
