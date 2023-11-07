@@ -32,5 +32,3 @@ def send_register_email(email,send_type='register'):
         if send_status:
             pass
 
-
-

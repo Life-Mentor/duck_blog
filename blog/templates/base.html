@@ -7,7 +7,7 @@
 		{% load static %}
 		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
 		<link rel="stylesheet" href="{% static 'imgs/img/css/all.css' %}">
-		<link rel="stylesheet" href="{% static 'users/home.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/css/my.css' %}">
 	</head>
 	<body>
 		<nav class="navbar" role="navigation" aria-label="main navigation">
@@ -60,6 +60,11 @@
 			</ul>
 		</div>
     		{% block content %}
+		{% for catgory in catgorys %}
+			<p> {{ catgory.name }} </p>
+			<p> {{ catgory.desc }} </p>
+			<p> {{ catgory.add_data }} </p>
+		{% endfor %}
     		{% endblock content %}
 	</body>
 </html>

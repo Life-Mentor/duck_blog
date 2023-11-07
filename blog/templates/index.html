@@ -3,15 +3,10 @@
 			<title> 首页 </title>
 		{% endblock head %}
 		{% load static %}
-{% block content %}
+{% block content %} <br />
 	<div align='center'>
-		<img src='{% static 'imgs/i.jpg' %}' alt='defluat' width=192>
-		<h2> 欢迎来到我的闲聊博客 </h2>
+		<img  id='circle' src='{% static 'imgs/i.jpg' %}' alt='defluat' width=224>
+		<h1 style=" font-size:30px"> 欢迎来到我的闲聊博客 </h1>
 	</div>
-		<hr>
-		{% for catgory in catgorys %}
-			<p> {{ catgory.name }} </p>
-			<p> {{ catgory.desc }} </p>
-			<p> {{ catgory.add_data }} </p>
-		{% endfor %}
+	<hr width=600 >
 {% endblock content %}
