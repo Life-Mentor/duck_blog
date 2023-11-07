@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+<span> {{ users.username }} </span>
 <figure class='image is-96x96'>
 {% if users.userprofile.image %}
 	<img src=' {% static 'imgs/head.jpg' %} {{ users.image }} '>
@@ -9,9 +10,35 @@
 	<img src='{% static 'imgs/head.jpg' %}' alt='ikun'>
 {% endif %}
 </figure>
-	{% if users.profile.nike_name %}
-		<span> {{ users.profile.nike_name }} </span>
-	{% else %}
-		<span> {{ users.username }} </span>
-	{% endif %}
+
+{% if users.profile.nike_name %}
+	<span> {{ users.profile.nike_name }} </span> 
+	<br />
+{% else %}
+	<span> 用户暂时未设置个性签名 </span>
+	<br />
+{% endif %}
+
+{% if users.userprofile.gender %}
+	<span> {{ users.userprofile.gender }} </span>
+	<br />
+{% else %}
+	<span> 未设置性别 </span>
+	<br />
+{% endif %}
+
+{% if user.userprofile.email %}
+	<span> {{ users.email }}
+	<br />
+{% else %}
+	<span> 未设置email </span>
+	<br />
+{% endif %}
+	<br />
+{% if user.userprofile %}
+	<span> {{ user.userprofile.address }} </span>
+{% else %}
+        <span> 暂未添加地址 </span>
+{% endif %}
+
 {% endblock content %}
