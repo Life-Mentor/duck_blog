@@ -6,6 +6,6 @@ class index(View):
     def get(self,request):
         catgorys = Catgory.objects.all()
         post_list = Post.objects.all()
-        return render(request,"index.html",{'catgorys':catgorys,'post_list':post_list})
+        return render(request,"index/index.html",{'catgorys':catgorys,'post_list':post_list})
 
 

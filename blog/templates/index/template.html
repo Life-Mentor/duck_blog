@@ -7,15 +7,14 @@
 		{% load static %}
 		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
 		<link rel="stylesheet" href="{% static 'imgs/img/css/all.css' %}">
-		<link rel="stylesheet" href="{% static 'users/home.css' %}">
-    		<script src=" {% static 'js/all.min.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'users/my.css' %}">
 	</head>
 	<body>
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item">
 					{% if users.userprofile.image %}
-					<img src=' {% static 'imgs/head.jpg' %} {{ users.image }} '>
+						<img src='{{MEDIA_URL}}{{ users.image }}'>
 					{% else %}
 						<img src='{% static 'imgs/head.jpg' %}' alt='ikun'>
 					{% endif %}
@@ -23,7 +22,7 @@
 			</div>
 			<div class='navbar-menu'>
 				<div class='navbar-start'>
-					<a href= '{% url 'users:index' %}' class="navbar-item"> 首页 </a>
+					<a href= '{% url 'blog:index' %}' class="navbar-item"> 首页 </a>
 					<a href= '{% url 'users:home' %}' class="navbar-item"> 个人中心 </a>
 					<a href= '{% url 'users:login' %}' class="navbar-item"> 登录 </a>
 					<a href= '{% url 'users:reirster'%}' class="navbar-item"> 注册 </a>

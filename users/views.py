@@ -37,14 +37,10 @@ class MyBlack(ModelBackend):
         except Exception as e:
             return None
 
-class index(View):
-    def get(self,request):
-        return render(request,"users/index.html")
-
 class login_view(View):
     def get(self,request):
         form = LoginForm()
-        return render(request,"users/login.html",{'form':form})
+        return render(request,"users/method/login.html",{'form':form})
     def post(self,request):
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -58,12 +54,12 @@ class login_view(View):
                 return responses
             else:
                 return HttpResponse("登录失败")
-        return render(request,"users/login.html",{'form':form})
+        return render(request,"users/method/login.html",{'form':form})
 
 class reirster(View):
     def get(self,request):
         form = Reirster()
-        return render(request,'users/reirster.html',{'form':form})
+        return render(request,'users/method/reirster.html',{'form':form})
     def post(self,request):
         form = Reirster(request.POST)
         code = "OK"
@@ -75,12 +71,12 @@ class reirster(View):
 
             send_register_email(form.cleaned_data.get('email'),'register')
             return HttpResponse('注册成功')
-        return render(request,'users/reirster.html',{'form':form,'code':code})
+        return render(request,'users/method/reirster.html',{'form':form,'code':code})
 
 class forget_pwd(View):
     def get(self,request):
         form = ForgetPwdForm()
-        return render(request,'users/forget_pwd.html',{'form':form})
+        return render(request,'users/method/forget_pwd.html',{'form':form})
     def post(self,request):
         form = ForgetPwdForm(request.POST)
         if form.is_valid():
@@ -91,12 +87,12 @@ class forget_pwd(View):
                 return HttpResponse("发送成功请留意邮箱信息(垃圾信息)")
             else:
                 return HttpResponse("邮箱未注册")
-        return render(request,'users/forget_pwd.html',{'form':form})
+        return render(request,'users/method/forget_pwd.html',{'form':form})
 
 class reset_pwd(View):
     def get(self,request,active_code):
         form = ModifyPwdForm()
-        return render(request,'users/forget_pwd.html',{'form':form})
+        return render(request,'users/method/forget_pwd.html',{'form':form})
     def post(self,request,active_code):
         form = ModifyPwdForm(request.POST)
         if form.is_valid():
@@ -107,12 +103,12 @@ class reset_pwd(View):
             user.password = make_password(form.cleaned_data['password'])
             user.save()
             code = '修改成功'
-            return render(request,'users/reset_pwd.html',{'form':form,'code':code})
+            return render(request,'users/method/reset_pwd.html',{'form':form,'code':code})
         else:
             code = '修改失败'
-            return render(request,'users/reset_pwd.html',{'form':form,'code':code})
+            return render(request,'users/method/reset_pwd.html',{'form':form,'code':code})
 
 @login_required(login_url='users:login')
 def user_home(request):
     user = User.objects.get(username=request.user)
-    return render(request,'users/home.html',{'users':user})
+    return render(request,'users/home_template/home.html',{'users':user})
