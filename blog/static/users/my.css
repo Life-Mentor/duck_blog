@@ -4,7 +4,10 @@
     width: 100px;
     height: 100px;
 }
-html, body { background-image: url("../imgs/b.png"); background-size: cover; }
+html, body { 
+	background-image: url("../imgs/b.png"); 
+	background-size: cover; 
+}
 hr {
   display: block;
   margin-top: 0.5em;
@@ -13,4 +16,10 @@ hr {
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
+}
+.div{
+	text-align: center;
+	margin:0 auto; 
+	width:400px; 
+	height:100px; 
 }

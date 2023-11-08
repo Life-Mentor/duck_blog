@@ -1,12 +1,18 @@
-{% extends 'template.html' %}
+{% extends 'index/template.html' %}
 		{% block head %}
 			<title> 首页 </title>
 		{% endblock head %}
 		{% load static %}
 {% block content %} <br />
 	<div align='center'>
-		<img  id='circle' src='{% static 'imgs/i.jpg' %}' alt='defluat' width=224>
+		<figure class="image is-128x128">
+			<img class="is-rounded" src='{% static 'imgs/i.jpg' %}' alt='defluat' width=224>
+		</figure>
 		<h1 style=" font-size:30px"> 欢迎来到我的闲聊博客 </h1>
 	</div>
 	<hr width=600 >
+	<div class="buttons div">
+		<a href='#' class="button is-warning">Primary</a>
+		<a href='#' class="button is-warning" >Link</a>
+	</div>
 {% endblock content %}
