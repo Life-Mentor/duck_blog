@@ -4,7 +4,7 @@
     width: 100px;
     height: 100px;
 }
-html, body { 
+html { 
 	background-image: url("../imgs/b.png"); 
 	background-size: cover; 
 }
