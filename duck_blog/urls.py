@@ -5,8 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(("blog.urls","blog"),namespace="blog")),
+    path('blog/', include(("blog.urls","blog"),namespace="blog")),
     path('users/', include(("users.urls","blog"),namespace="users")),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # 配置静态文件url
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

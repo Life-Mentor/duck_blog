@@ -4,8 +4,9 @@
 		{% block head%}
 			<title> userhome </title>
 		{% endblock head%}
+		{% load static category %}
 		{% load static %}
-		<link rel="stylesheet" href="{% static 'bulma/css/bulma.min.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
 		<link rel="stylesheet" href="{% static 'imgs/img/css/all.css' %}">
 		<link rel="stylesheet" href="{% static 'users/my.css' %}">
 	</head>
@@ -33,7 +34,7 @@
 					<div class="navbar-item has-dropdown is-hoverable">
 						<a class="navbar-link"> 下拉菜单 </a>
 						<div class="navbar-dropdown">
-							<a class="navbar-item"> Overview </a>
+							<a href='{% url 'blog:qq'%}' class="navbar-item"> 加入我们 </a>
 							<a class="navbar-item"> Elements </a>
 							<a class="navbar-item"> Components </a>
 							<hr class="navbar-divider">

@@ -1,0 +1,68 @@
+{% extends 'article_template/template.html' %}
+{% block content %}
+{% load static category %}
+{% get_category_list as category_list %}
+	<div align='center'>
+		<figure class="image is-128x128">
+			<img class="is-rounded" src='{% static 'imgs/i.jpg' %}' alt='defluat' width=224>
+		</figure>
+		<h1 style=" font-size:30px"> 欢迎来到我的闲聊博客 </h1>
+	</div>
+<div class="level container">
+	<div class="level-left">
+		<div class="level-item is-6">
+			<div class="notification is-warning">
+				{% for category in category_list %}
+					<p>{{ category.name }}</p>
+					<p>{{ category.add_data }}</p>
+				{% endfor %}
+				{% for post in post_list %}
+					<p>{{ post.title }}</p>
+					{{ post.desc }}
+				{% endfor %}
+			</div>
+		</div> 
+	</div>
+	<div class="level-right">
+		<div class="level-item is-6">
+			<div class="notification is-warning">
+				{% for category in category_list %}
+					<p>{{ category.name }}</p>
+					<p>{{ category.add_data }}</p>
+				{% endfor %}
+				{% for post in post_list %}
+					<p>{{ post.title }}</p>
+					{{ post.desc }}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<br/>
+<!-- <div class="container">
+	<div class="notification is-warning">
+		{% for category in category_list %}
+			<p>{{ category.name }}</p>
+			<p>{{ category.add_data }}</p>
+		{% endfor %}
+
+		{% for post in post_list %}
+			<p>{{ post.title }}</p>
+			{{ post.desc }}
+		{% endfor %}
+	</div>
+</div> <br/>
+<div class="container">
+	<div class="notification is-warning">
+		{% for category in category_list %}
+			<p>{{ category.name }}</p>
+			<p>{{ category.add_data }}</p>
+		{% endfor %}
+
+		{% for post in post_list %}
+			<p>{{ post.title }}</p>
+			{{ post.desc }}
+		{% endfor %}
+	</div>
+</div> <br/> -->
+{% endblock content %}

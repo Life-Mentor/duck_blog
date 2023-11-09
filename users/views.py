@@ -14,7 +14,7 @@ from utils.email_send import send_register_email
 
 def logout_user(request):
     logout(request)
-    return redirect(reverse('users:index'))
+    return redirect(reverse('blog:index'))
 
 def active_user(request,active_code):
     all_records = EmailVerifyRecord.objects.filter(code = active_code)

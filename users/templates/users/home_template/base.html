@@ -33,7 +33,7 @@
 					<div class="navbar-item has-dropdown is-hoverable">
 						<a class="navbar-link"> 下拉菜单 </a>
 						<div class="navbar-dropdown">
-							<a href='{% url 'blog:qq'%}' class="navbar-item"> 加我QQ</a>
+							<a href='{% url 'blog:qq'%}' class="navbar-item"> 加入我们 </a>
 							<a class="navbar-item"> Elements </a>
 							<a class="navbar-item"> Components </a>
 							<hr class="navbar-divider">
@@ -43,22 +43,6 @@
 				</div>
 			</div>
 		</nav>
-		<div class="tabs is-centered">
-			<ul>
-				<li class="is-active">
-					<a> <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span> <span>Pictures</span> </a>
-				</li>
-				<li>
-					<a> <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span> <span>Music</span> </a>
-				</li>
-				<li>
-					<a> <span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span> <span>Videos</span> </a>
-				</li>
-				<li>
-					<a> <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span> <span>Documents</span> </a>
-				</li>
-			</ul>
-		</div>
 		{% block content %}
 		{% endblock content %}
 	</body>
